@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { UploadCloud, CheckCircle2, ArrowLeft, Image as ImageIcon, Loader2, Sparkles, MapPin, Award } from "lucide-react";
+import { UploadCloud, CheckCircle2, ArrowLeft, Image as ImageIcon, Loader2, Sparkles, MapPin, Award, ChevronRight } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { CANDIDATO_INFO } from "@/lib/mockData";
 
