@@ -5,13 +5,13 @@ import "./globals.css";
 const montserrat = Montserrat({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: ["500", "600", "700", "800", "900"],
 });
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -36,16 +36,12 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${montserrat.variable} ${jakarta.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-background text-foreground overflow-x-hidden selection:bg-primary/20">
+      <body className="min-h-full flex flex-col font-sans bg-primary text-white overflow-x-hidden selection:bg-accent/30">
         
-        {/* Background Dinâmico e Institucional */}
-        <div className="fixed inset-0 z-0 pointer-events-none select-none overflow-hidden">
-          <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-primary/10 blur-3xl pointer-events-none" />
-          <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-accent/10 blur-3xl pointer-events-none" />
-          <div className="absolute top-[40%] right-[20%] w-[30vw] h-[30vw] rounded-full bg-gold/5 blur-3xl pointer-events-none" />
-        </div>
+        {/* Grid Pattern Background — Full Page */}
+        <div className="fixed inset-0 z-0 pointer-events-none select-none bg-grid-pattern" />
 
-        {/* Conteúdo do site acima do fundo */}
+        {/* Content */}
         <div className="relative z-10 flex-1 flex flex-col">
           {children}
         </div>

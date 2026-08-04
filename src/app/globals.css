@@ -1,16 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  /* Cores da paleta política e corporativa moderna */
-  --background: #F8FAFC; /* Slate 50 (Fundo limpo e corporativo) */
-  --foreground: #0F172A; /* Slate 900 (Texto azul escuro legível) */
+  /* Paleta inspirada no Base Club — Azul Elétrico + Lima Vibrante */
+  --background: #0033FF;
+  --foreground: #FFFFFF;
   
-  --primary: #1E40AF; /* Azul Real Institucional */
-  --accent: #2563EB; /* Azul Vibrante de Ação */
-  --secondary: #059669; /* Verde Esperança/Civico */
-  --gold: #F59E0B; /* Dourado / Amarelo Cívico */
-  
-  --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.08);
+  --primary: #0033FF;     /* Azul Elétrico */
+  --accent: #CDFF00;      /* Lima / Amarelo-verde vibrante */
+  --secondary: #FFFFFF;
+  --gold: #CDFF00;
+  --card-bg: #FFFFFF;
+  --card-fg: #0F172A;
+  --muted: rgba(255, 255, 255, 0.6);
+
+  --shadow-card: 0 8px 32px -4px rgba(0, 0, 0, 0.15);
 }
 
 @theme inline {
@@ -20,10 +23,65 @@
   --color-accent: var(--accent);
   --color-secondary: var(--secondary);
   --color-gold: var(--gold);
+  --color-card-bg: var(--card-bg);
+  --color-card-fg: var(--card-fg);
+  --color-muted: var(--muted);
 
   --font-serif: var(--font-serif);
   --font-script: var(--font-script);
   --font-sans: var(--font-sans);
+}
+
+/* Grid Pattern Background */
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Texto Outline / Stroke gigante estilo Base Club */
+.text-stroke {
+  -webkit-text-stroke: 3px white;
+  color: transparent;
+}
+
+.text-stroke-lg {
+  -webkit-text-stroke: 4px white;
+  color: transparent;
+}
+
+/* Glassmorphism cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Pill button style */
+.pill-btn {
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 9999px;
+  padding: 8px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.pill-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Rotating badge animation */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
 }
 
 /* Base resets & utilities */
@@ -33,7 +91,7 @@
     color: var(--foreground);
   }
 
-  /* Micro-interações e Utilities globais da UI */
+  /* Scrollbar hiding */
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }

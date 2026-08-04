@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 
-// Usando variáveis de ambiente para conectar ao banco de dados do casamento
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+// Variáveis com fallback seguro para não quebrar a compilação do Next.js quando o Supabase não estiver configurado
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://placeholder-politica2026.supabase.co";
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "placeholder-anon-key";
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
