@@ -14,7 +14,7 @@ export const CANDIDATO_INFO = {
   numero: "55.123",
   slogan: "Coragem para Mudar, Compromisso com Você!",
   partido: "Partido da Renovação",
-  biografia: "Liderança comunitária, gestor com foco no desenvolvimento regional, defesa da saúde pública e apoio à juventude no estado de São Paulo.",
+  biografia: "Liderança comunitária, gestor com foco no desenvolvimento regional, defesa da saúde pública e apoio à juventude no estado da Bahia.",
   fotoPerfil: "/candidato fake/1.png",
   propostas: [
     {
